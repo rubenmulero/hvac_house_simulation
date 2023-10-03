@@ -1,0 +1,4 @@
+arrow
+pandas
+numpy
+tqdm
