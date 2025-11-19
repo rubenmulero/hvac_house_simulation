@@ -12,7 +12,7 @@ import pathlib
 from logging.handlers import SMTPHandler
 
 
-ADMINS = ['ruben.mulero@tecnalia.com']
+ADMINS = ['johndoe@mail.com']
 
 
 LOG_FOLDER = str(pathlib.Path(__file__).parent.absolute()) + '/../logs'
@@ -47,10 +47,10 @@ class LoggingClass:
         self.logger.addHandler(ch)
 
         # Configure the Mail handler.
-        mail_handler = SMTPHandler(mailhost=('172.26.150.152', 465),
-                                   fromaddr='nubio@tecnalia.com',
+        mail_handler = SMTPHandler(mailhost=('192.168.1.1', 465),
+                                   fromaddr='johndoe@mail.com',
                                    toaddrs=ADMINS, subject='YourApplication Failed',
-                                   credentials=('nubio@tecnalia.com', 'fC5174$2'))
+                                   credentials=('johndoe@mail.com', 'AAAAABBBBBBCCCCC'))
         mail_handler.setLevel(logging.ERROR)
         self.logger.addHandler(mail_handler)
 
